@@ -1,1 +1,1 @@
-## This folder contains code for principal component analysis and genome-wide association study in rapidly progressive Alzheimer's disease. For any questions, please contact Ping Wang by email (pxw287@case.edu).
+### This folder contains code for principal component analysis and genome-wide association study in rapidly progressive Alzheimer's disease. For any questions, please contact Ping Wang by email (pxw287@case.edu).
