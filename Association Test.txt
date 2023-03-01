@@ -1,0 +1,20 @@
+## PLINK v1.90b6.11 64-bit
+
+## Perform the genome-wide association test
+
+plink --bfile case_control
+      --pheno phenotye.txt 
+      --pheno-name diagnosis 
+      --covar covariates.txt 
+      --covar-name PC1, PC2, PC3 
+      --logistic 
+      --hide-covar 
+      --out case_control
+
+## Remove NA values from the output file
+
+awk '!/'NA'/' case_control.assoc.logistic > case_control.assoc_2.logistic
+
+## Generate figures for association results
+
+Rscript --no-save GWAS_plots.R
