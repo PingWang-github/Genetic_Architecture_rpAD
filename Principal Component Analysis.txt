@@ -1,2 +1,18 @@
-## PLINK v1.90b6.11 64-bit## Prune SNPs that passed final quality control to generate a set of independent SNPs. 
-## We excluded high inversion regions (inversion.txt) and kept the output file indepSNP.prune.in for principal component analysis.plink --bfile pass_qc       --exclude inversion.txt       --range      --indep-pairwise 50 5 0.2       --out indepSNP## Generate principal components using the pruned SNPsplink Ñ-bfile pass_qc       --extract indepSNP.prune.in        --keep case_control_id.txt      --pca 10      --out pca_cc
+## PLINK v1.90b6.11 64-bit
+
+## Prune SNPs that passed final quality control to generate a set of independent SNPs. 
+## We excluded high inversion regions (inversion.txt) and kept the output file indepSNP.prune.in for principal component analysis.
+
+plink --bfile pass_qc 
+      --exclude inversion.txt 
+      --range
+      --indep-pairwise 50 5 0.2 
+      --out indepSNP
+
+## Generate principal components using the pruned SNPs
+
+plink --bfile pass_qc 
+      --extract indepSNP.prune.in  
+      --keep case_control_id.txt
+      --pca 10
+      --out pca_cc
